@@ -5,7 +5,7 @@
   "main": "./dist/lib.min.js",
   "scripts": {
     "build": "npm run lint && yarn test && npx webpack",
-    "pub": "npm run build && npm publish",
+    "pub": "npm run build && npm version patch && npm publish",
     "lint": "eslint ./lib/**/*.js ./test/**/*.js ./webpack.config.js  ./.eslintrc.js --fix",
     "test": "mocha --timeout 40000"
   },
