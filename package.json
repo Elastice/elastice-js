@@ -1,6 +1,6 @@
 {
   "name": "@elastice/client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Elastice JS client",
   "main": "./dist/lib.min.js",
   "scripts": {
