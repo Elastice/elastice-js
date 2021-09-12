@@ -1,0 +1,47 @@
+{
+  "name": "@elastice/client",
+  "version": "0.1.0",
+  "description": "Elastice JS client",
+  "main": "./dist/lib.min.js",
+  "scripts": {
+    "build": "npm run lint && yarn test && npx webpack",
+    "pub": "npm run build && npm publish",
+    "lint": "eslint ./lib/**/*.js ./test/**/*.js ./webpack.config.js  ./.eslintrc.js --fix",
+    "test": "mocha --timeout 40000"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "mime-types": "^2.1.32"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "4.3.8",
+    "lint-staged": "^11.1.2",
+    "mocha": "^9.1.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "browser": {
+    "crypto": false,
+    "stream": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm version patch && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  }
+}
